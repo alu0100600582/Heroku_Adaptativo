@@ -1,27 +1,37 @@
-## Práctica: Quiz. Generación, Favicon, Layouts, Controladores, Modelos
+## Práctica: Quiz. Diseño Adaptativo, Despliegue en Heroku, Mejoras.
 
 ### Descripción de la Práctica
 
-En esta práctica vamos seguir los pasos para crear un cuestionario 'Quiz' con Express.
+En esta práctica vamos a crear un Diseño Adaptativo para nuestra aplicación Quiz y también vamos a desplegar la aplicación en Heroku.
 
 ### Requisitos de la Práctica:
 
 
-- Siguiendo las instrucciones en el Módulo VI: El proyecto Quiz y MVC construya paso a paso la aplicación del cuestionario.
+Añada a la práctica anterior del Quiz:
 
-- Siga las instrucciones en el repositorio SYTW/basic-quiz para dotarlo de un modelo con múltiples preguntas. Este modelo no usa una base de datos sino que se describe mediante una clase JavaScript.
+    - Diseño adaptativo
 
-- Añada una ruta /quizes/questions que liste todas las preguntas.
+    - Despliegue en Heroku
 
-- Añada rutas como /quizes/questions/5 que muestre la pregunta 5.
+    - Defina una clase o factoría Respuesta cuyo constructor/factoría admita como argumento:
+          - Una función
 
--  Despliegue en iaas.ull.es.
+          - Una expresión regular regexp (el constructor/factoría lo convierte internamente a formato función así: function(x) { return x.match(regexp);})
 
-- No hace falta que despliegue la aplicación en Heroku
+          - Una cadena string o un número number (el constructor/factoría lo convierte a formato función así: function(x) { return x === 'string'; } o bien function(x) { return x === number; })
 
-- No hace falta que haga un diseño adaptativo.
+    - Un objeto Respuesta es siempre una función que recibe un argumento con la respuesta escrita por el alumno y retorna true si y sólo si la respuesta es correcta.
 
-- No hace falta que haga pruebas.
+    - Añada una clase Pregunta de la que heredan PreguntaCorta (que se representa en la vista mediante un input) y PreguntaLarga (que se representará mediante una textarea).
+
+      {
+        pregunta: new PreguntaCorta('¿En que año se  descubrió América?<br/>'),
+        respuesta: new Respuesta(1492)
+      },
+
+    - Reescriba el cuestionario con la nueva sintáxis
+
+
 
 
 ---
@@ -30,6 +40,6 @@ Enlace a la Comunidad de la Asignatura: https://plus.google.com/u/1/communities/
 
 Mi GitHub page: http://alu0100600582.github.io/
 
-Repositorio Github: https://github.com/alu0100600582/Quiz
+Repositorio Github: https://github.com/alu0100600582/Heroku_Adaptativo
 
-Despliegue en el IAAS: http://10.6.128.94:8081/
+Despliegue en Heroku: http://quiz-sytw.herokuapp.com/
