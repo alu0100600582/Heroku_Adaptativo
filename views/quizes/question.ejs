@@ -1,5 +1,6 @@
 <form method="get" action="/quizes/answer">
-    Pregunta: <%- pregunta.enunciado %><p>
+   Pregunta: <%- pregunta.enunciado %><p>
+             <%- pregunta.entrada %>
     <input type="text" name="respuesta" placeholder="Respuesta" />
     <input type="submit" value="Enviar" />
  </form>

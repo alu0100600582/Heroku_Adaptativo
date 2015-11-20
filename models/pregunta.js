@@ -6,12 +6,12 @@ function Pregunta(enunciado){
 
 function PreguntaLarga(enunciado){
   Pregunta.call(this,enunciado);
-  this.entrada = "<textarea name='respuesta'></textarea>";
+  this.entrada = "<textarea type='text' name='respuesta'></textarea>";
 }
 
 function PreguntaCorta(enunciado){
   Pregunta.call(this,enunciado);
-  this.entrada = "<input name='respuesta' autofocus=''>";
+  this.entrada = "<input type='text' name='respuesta' >";
 }
 
 
